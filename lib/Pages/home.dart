@@ -11,6 +11,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.orange[100],
       body: SafeArea(
           child: TextButton.icon(
         onPressed: () {
@@ -18,8 +19,9 @@ class _HomeState extends State<Home> {
         },
         icon: Icon(
           Icons.edit_location,
+          color: Colors.black,
         ),
-        label: Text("Change location"),
+        label: Text("Change location", style: TextStyle(color: Colors.red)),
       )),
     );
   }
