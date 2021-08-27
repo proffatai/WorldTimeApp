@@ -6,7 +6,7 @@ import 'package:world_clock_project/Pages/choose_location.dart';
 void main() {
   runApp(MaterialApp(
     initialRoute:
-        '/home', // this is used to specify the first page. it will override '/' of the routes attribute
+        '/', // this is used to specify the first page. it will override '/' of the routes attribute
     // home: Home(),
     routes: {
       '/': (context) =>
