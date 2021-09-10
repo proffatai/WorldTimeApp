@@ -1,5 +1,6 @@
 import 'package:http/http.dart'; // used to get JSON data from a webpage
 import 'dart:convert'; // it allows to convert JSON obj into Maps that we can work with
+import 'package:intl/intl.dart';
 
 class WorldTime {
   String location;
@@ -39,6 +40,8 @@ class WorldTime {
     result = result.add(Duration(hours: hr));
     // print(result); // the offset has been added to update the time
     // converting the time from int to str so we can put inside a Text widget on the screen
-    time = result.toString();
+    // time = result.toString();
+    //DateFormat frm the intl package to properly format the time for us
+    time = DateFormat.jm().format(result);
   }
 }
