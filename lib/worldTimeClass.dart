@@ -7,12 +7,13 @@ class WorldTime {
   String time;
   String url;
   String flag;
-
+  String dayOrnig;
   WorldTime(
       {required this.location,
       required this.time,
       required this.flag,
-      required this.url});
+      required this.url,
+      required this.dayOrnig});
 //Getting JSON Data from a website
   Future<void> getData() async {
     //we used await as we want the content to be gotten first before the code progresses further
@@ -43,5 +44,10 @@ class WorldTime {
     // time = result.toString();
     //DateFormat frm the intl package to properly format the time for us
     time = DateFormat.jm().format(result);
+    //time between 6am and 7:59 is taken as Day els Night
+    dayOrnig = result.hour > 6 && result.hour < 20
+        ? "assets/day.png"
+        : "assets/night.png";
+    //Note: We used the DateTime variable "result" for checking the time so that we can use the .hour ppty
   }
 }
