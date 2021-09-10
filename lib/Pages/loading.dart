@@ -18,17 +18,19 @@ class _LoadingState extends State<Loading> {
     WorldTime
         data1 = // take note: the time :theTime will be overritten when getData() executes
         WorldTime(
-            location: 'England',
+            location: 'Lagos',
             time: theTime,
             flag: 'assets/uk.png',
-            url: "Europe/London");
+            url: "Africa/Lagos",
+            dayOrnig: "assets/night.png");
     //We want our program to get the and fill the time ppty before progressing
     //forward and that is why we made it to be an await data
     await data1.getData(); // filling the url and also filling the time ppry
     Navigator.pushReplacementNamed(context, '/home', arguments: {
       'loc': data1.location,
       'flg': data1.flag,
-      'time': data1.time
+      'time': data1.time,
+      'dn': data1.dayOrnig
     });
   }
 
